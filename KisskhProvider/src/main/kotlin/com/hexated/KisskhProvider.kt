@@ -140,6 +140,17 @@ class KisskhProvider : MainAPI() {
                             referer = "$mainUrl/",
                             headers = mapOf("Origin" to mainUrl)
                         ).forEach(callback)
+                    } else if (link?.contains(".mp4") == true) {
+                        //Process MP4 Links
+                        callback.invoke(
+                            ExtractorLink(
+                                name = this.name,
+                                source = mainUrl,
+                                url - link,
+                                referer = "$mainUrl/",
+                                isM3u8 = false
+                            )
+                        )
                     } else {
                         loadExtractor(
                             link?.substringBefore("=http") ?: return@safeApiCall,
