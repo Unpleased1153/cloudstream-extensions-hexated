@@ -141,12 +141,12 @@ class KisskhProvider : MainAPI() {
                             headers = mapOf("Origin" to mainUrl)
                         ).forEach(callback)
                     } else if (link?.contains(".mp4") == true) {
-                        //Process MP4 Link
+                        //Process MP4 Links
                         callback.invoke(
                             ExtractorLink(
-                                name = this.name,
                                 source = mainUrl,
-                                url - link,
+                                name = this.name,
+                                url = link,
                                 referer = "$mainUrl/",
                                 isM3u8 = false
                             )
