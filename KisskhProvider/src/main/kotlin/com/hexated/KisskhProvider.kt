@@ -148,6 +148,7 @@ class KisskhProvider : MainAPI() {
                                 name = this.name,
                                 url = link,
                                 referer = "$mainUrl/",
+                                quality = Qualities.Unknown.value
                                 isM3u8 = false
                             )
                         )
